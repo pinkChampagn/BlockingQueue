@@ -151,6 +151,7 @@ class consumer2 implements Runnable{
         while (cdl.getCount()>5){
             //@param ba ArrayBlockingQueue
             if (!bq.isEmpty()) {
+                //需要加锁
                 synchronized (lock) {
                     if(bq.isEmpty())
                         continue;
